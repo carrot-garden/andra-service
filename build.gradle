@@ -1,0 +1,40 @@
+
+apply plugin: "java"
+apply plugin: "eclipse"
+
+repositories {
+	mavenCentral()
+}
+
+group = "com.carrotgarden"
+version = '1.0.0'
+
+sourceCompatibility = 1.6
+
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
+	}
+}
+
+dependencies {
+	compile 'org.hibernate:hibernate-core:3.6.7.Final'
+	testCompile 'junit:junit:4.+'
+}
+
+
+test {
+	systemProperties 'key': 'value'
+}
+
+
+uploadArchives {
+	repositories {
+	   flatDir {
+		   dirs "/tmp/repo"
+	   }
+	}
+}
+
+
+
